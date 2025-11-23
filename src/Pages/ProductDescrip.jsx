@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ProductDetails } from "../Context/Product";
+import { ShoppingCart } from "lucide-react";
 
 const ProductDescrip = () => {
   const { category,id } = useParams();              // Read ID from the URL
@@ -45,21 +46,20 @@ const ProductDescrip = () => {
                 <img
                   src={product.Img}
                   alt="variation"
-                  className="w-16 h-16 md:w-14 md:h-14 border p-1 cursor-pointer hover:border-black flex-shrink-0"
+                  className="w-16 h-16 md:w-14 md:h-14 border p-1 cursor-pointer hover:border-black shrink-0"
                 />
                 <img
                   src={product.Img}
                   alt="variation"
-                  className="w-16 h-16 md:w-14 md:h-14 border p-1 cursor-pointer hover:border-black flex-shrink-0"
+                  className="w-16 h-16 md:w-14 md:h-14 border p-1 cursor-pointer hover:border-black shrink-0"
                 />
               </div>
             </div>
-        <button className="mt-20 bg-black text-white px-7 py-4 w-full rounded text-lg active:scale-95 transition-transform">
-          Add to Cart
+        <button className="mt-20 bg-black text-white px-7 py-4 w-[40vw] rounded text-lg active:scale-95 transition-transform flex justify-center items-center gap-4">
+        <ShoppingCart /> Add to Cart
         </button>
       </div>
     </div>
   );
 };
-
 export default ProductDescrip;
