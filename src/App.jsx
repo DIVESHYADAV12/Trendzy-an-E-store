@@ -9,11 +9,16 @@ import Kids from './Pages/Kids'
 import End from './Components/Footer/End'
 import Login from './Pages/Login'
 import Cart from './Pages/Cart'
+import Search from './Components/Navbar/SearchBar/Search'
+import ProductDescrip from './Pages/ProductDescrip'
+import ScrolltoTop from './Components/Scroll/ScrolltoTop'
 
 const App = () => {
   return (
     <div>
       <Navbar/>
+      <Search/>
+      <ScrolltoTop/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/Women' element={<Women/>}/>
@@ -22,6 +27,7 @@ const App = () => {
         <Route path='/Contact' element={<Contact/>} />
         <Route path='/Login' element={<Login/>} />
         <Route path='/Cart' element={<Cart/>} />
+        <Route path='/ProductDescrip/:category/:id' element={<ProductDescrip/>} />
       </Routes>
       <End/>
     </div>

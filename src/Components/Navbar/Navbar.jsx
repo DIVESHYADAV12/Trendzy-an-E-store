@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ProductDetails } from '../../Context/Product'
 
 const Navbar = () => {
   const [visible, setVisible] = useState("false")
+  const {setShowSearch} = useContext(ProductDetails)
   return (
-    <div className='flex bg-white justify-between fixed w-full z-50 px-10 py-5'>
+    <div className='flex bg-white justify-between w-full z-50 px-10 py-5 fixed'>
       <div className='prata-regular flex justify-center items-center text-3xl'>TRENDZY</div>
       <div className='text-m items-center flex justify-center px-10 gap-5 text-gray-600'>
         <Link to='/' className=' flex flex-col items-center hover:scale-105 transition-transform'>
@@ -20,7 +22,7 @@ const Navbar = () => {
           <p className='hover:text-black'>About</p>
         </Link></div>
       <div className='flex items-center gap-6'>
-        <img src="/src/assets/search_icon.png" className='w-5 cursor-pointer' alt="" />
+        <img onClick={()=>setShowSearch(true)} src="/src/assets/search_icon.png" className='w-5 cursor-pointer' alt="" />
         <div className='group relative'>
           <img src="/src/assets/profile_icon.png" className='w-5 cursor-pointer' alt="" />
           <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>

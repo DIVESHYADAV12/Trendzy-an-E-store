@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
-const Caegorycard = ({image,linkname,route}) => {
+const Caegorycard = ({image,linkname,route,Id}) => {
   return (
     <div>
       <div className='relative transition-transform hover:scale-105'>

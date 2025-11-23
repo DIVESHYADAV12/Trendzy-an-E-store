@@ -1,8 +1,10 @@
-import React, { createContext, useState, useContext} from 'react'
+import React, { createContext, useState} from 'react'
+export const ProductDetails = createContext()
 
-export const ProductDeatils = createContext()
+const ProductDetailsProvider = ({children}) => {
 
-const Product = (props) => {
+    const[search,setSearch] = useState('')
+    const[showSearch,setShowSearch] = useState(false)
 
     const [him,sethim] = useState([
       {
@@ -332,7 +334,7 @@ const Product = (props) => {
   
     const [kid, setKid] = useState([
       {
-        Id: 1,
+        id: 1,
         Name: "Building Blocks",
         Price: 25,
         Img: "https://i.pinimg.com/1200x/45/96/ca/4596cadde7245727456fed8b4ebd75c2.jpg",
@@ -340,7 +342,7 @@ const Product = (props) => {
           "Colorful building blocks set to enhance creativity, imagination, and motor skills, perfect for kids of all ages to play and learn.",
       },
       {
-        Id: 2,
+        id: 2,
         Name: "Toy Car",
         Price: 15,
         Img: "https://i.pinimg.com/736x/18/bf/ed/18bfed0d2bb925c0c47197e451b17164.jpg",
@@ -348,7 +350,7 @@ const Product = (props) => {
           "Mini toy car with smooth wheels and vibrant colors, ideal for imaginative play, racing games, and developing coordination skills in children.",
       },
       {
-        Id: 3,
+        id: 3,
         Name: "Dinosaur Toy",
         Price: 20,
         Img: "https://i.pinimg.com/736x/83/bb/da/83bbda227829e9dea00c3f04244339d8.jpg",
@@ -356,7 +358,7 @@ const Product = (props) => {
           "Realistic dinosaur toy to spark curiosity about prehistoric life, perfect for imaginative play, learning, and collecting by young explorers.",
       },
       {
-        Id: 4,
+        id: 4,
         Name: "Panda Lego",
         Price: 30,
         Img: "https://i.pinimg.com/736x/66/40/67/664067651032451f21c2e3e539ccf930.jpg",
@@ -364,7 +366,7 @@ const Product = (props) => {
           "Cute panda-themed Lego set to inspire creativity, improve fine motor skills, and provide hours of engaging, fun-filled play for kids.",
       },
       {
-        Id: 5,
+        id: 5,
         Name: "Lilo Doll",
         Price: 18,
         Img: "https://i.pinimg.com/736x/66/7b/57/667b5739c102b197201f7922d0c9e234.jpg",
@@ -372,7 +374,7 @@ const Product = (props) => {
           "Soft Lilo doll with friendly expression, perfect for cuddling, imaginative play, storytelling, and gifting to children on birthdays or holidays.",
       },
       {
-        Id: 6,
+        id: 6,
         Name: "Puzzle Toy",
         Price: 22,
         Img: "https://i.pinimg.com/1200x/39/2a/15/392a15a6a1485b368b177488f3d2d755.jpg",
@@ -380,7 +382,7 @@ const Product = (props) => {
           "Engaging puzzle toy designed to challenge problem-solving skills, boost concentration, and encourage fun learning through interactive play for kids.",
       },
       {
-        Id: 7,
+        id: 7,
         Name: "Robot Toy",
         Price: 28,
         Img: "https://i.pinimg.com/736x/e6/33/e7/e633e70bd16369aa1bcf25a50a83033c.jpg",
@@ -388,7 +390,7 @@ const Product = (props) => {
           "Interactive robot toy with lights and sounds, perfect for imaginative play, STEM learning, and keeping children entertained for hours.",
       },
       {
-        Id: 8,
+        id: 8,
         Name: "Animal Figures",
         Price: 16,
         Img: "https://i.pinimg.com/736x/08/13/ea/0813ea79f07d8a6a5b2bc441b2630772.jpg",
@@ -396,7 +398,7 @@ const Product = (props) => {
           "Set of colorful animal figures to teach kids about wildlife, encourage creative play, and develop storytelling and cognitive skills.",
       },
       {
-        Id: 9,
+        id: 9,
         Name: "Ball Set",
         Price: 12,
         Img: "https://i.pinimg.com/1200x/f7/d0/e9/f7d0e9b83eda3f3ee0eb6c75abc40e9e.jpg",
@@ -404,7 +406,7 @@ const Product = (props) => {
           "Fun ball set for outdoor and indoor games, promoting active play, coordination, and teamwork while keeping children physically engaged and happy.",
       },
       {
-        Id: 10,
+        id: 10,
         Name: "Stuffed Bear",
         Price: 20,
         Img: "https://i.pinimg.com/736x/0c/73/b0/0c73b062f5bc1a6a3bf7623662cf988f.jpg",
@@ -412,7 +414,7 @@ const Product = (props) => {
           "Soft and cuddly stuffed bear, perfect for comforting children, imaginative play, bedtime companionship, and gifting on special occasions.",
       },
       {
-        Id: 11,
+        id: 11,
         Name: "Mini Train",
         Price: 25,
         Img: "https://i.pinimg.com/736x/04/16/2e/04162e7a67d4f1b4806d70b88218f098.jpg",
@@ -420,7 +422,7 @@ const Product = (props) => {
           "Mini train toy set for fun interactive play, enhancing creativity, coordination, and hours of imaginative adventures for kids.",
       },
       {
-        Id: 12,
+        id: 12,
         Name: "Kitchen Set",
         Price: 30,
         Img: "https://i.pinimg.com/736x/94/2c/ba/942cbabb947e04946e4c0decad3e6d3a.jpg",
@@ -428,7 +430,7 @@ const Product = (props) => {
           "Kids kitchen set with accessories for role-playing, encouraging imagination, learning, social skills, and creative fun during pretend cooking.",
       },
       {
-        Id: 13,
+        id: 13,
         Name: "Toy Plane",
         Price: 18,
         Img: "https://i.pinimg.com/1200x/1d/54/3f/1d543f8985f8dee5aa326837785c867d.jpg",
@@ -436,7 +438,7 @@ const Product = (props) => {
           "Mini toy plane designed for imaginative flying adventures, improving hand-eye coordination, motor skills, and providing endless entertainment for children.",
       },
       {
-        Id: 14,
+        id: 14,
         Name: "Magic Blocks",
         Price: 22,
         Img: "https://i.pinimg.com/1200x/82/bd/b7/82bdb704fe488d1efa3c806cc19f2f62.jpg",
@@ -444,7 +446,7 @@ const Product = (props) => {
           "Colorful magic blocks set to inspire creativity, spatial thinking, and problem-solving, perfect for fun learning and interactive play.",
       },
       {
-        Id: 15,
+        id: 15,
         Name: "Mini Scooter",
         Price: 35,
         Img: "https://i.pinimg.com/736x/09/59/89/095989db6e58f9c4377acf2aea0c4f6c.jpg",
@@ -452,7 +454,7 @@ const Product = (props) => {
           "Mini scooter for kids to enjoy active outdoor play, improve balance, coordination, and have fun with friends in the neighborhood.",
       },
       {
-        Id: 16,
+        id: 16,
         Name: "Animal Puzzle",
         Price: 20,
         Img: "https://i.pinimg.com/736x/51/df/24/51df2451ec36da886c1c4fb6a8c7393e.jpg",
@@ -460,7 +462,7 @@ const Product = (props) => {
           "Animal-themed puzzle to enhance problem-solving skills, memory, and creativity, providing educational fun for kids of all ages.",
       },
       {
-        Id: 17,
+        id: 17,
         Name: "Race Car Set",
         Price: 28,
         Img: "https://i.pinimg.com/1200x/cc/21/eb/cc21eb9b08ef400f6e76a8ddcea25363.jpg",
@@ -468,7 +470,7 @@ const Product = (props) => {
           "Exciting race car set for thrilling play, promoting imagination, coordination, and hours of competitive fun for children.",
       },
       {
-        Id: 18,
+        id: 18,
         Name: "Story Book",
         Price: 15,
         Img: "https://i.pinimg.com/1200x/6e/1e/1d/6e1e1d264565e48c2526d9d0f2edfb37.jpg",
@@ -476,7 +478,7 @@ const Product = (props) => {
           "Engaging story book to encourage reading habits, imagination, learning new concepts, and providing entertainment for kids.",
       },
       {
-        Id: 19,
+        id: 19,
         Name: "Teddy Bear",
         Price: 20,
         Img: "https://i.pinimg.com/1200x/87/42/27/874227d0b75c911248694faf60519cb5.jpg",
@@ -484,7 +486,7 @@ const Product = (props) => {
           "Adorable teddy bear with soft fabric, perfect for cuddling, imaginative play, comfort, and gifting to children on special occasions.",
       },
       {
-        Id: 20,
+        id: 20,
         Name: "Art Set",
         Price: 25,
         Img: "https://i.pinimg.com/736x/d4/f0/97/d4f097ae9c082bd8eb86f086c0c7d839.jpg",
@@ -657,11 +659,11 @@ const Product = (props) => {
 
   return (
     <div>
-      <ProductDeatils.Provider value={{him, her, kid}}>
-        {props.children}
-      </ProductDeatils.Provider>
+      <ProductDetails.Provider value={{him, her, kid ,search,setSearch,showSearch,setShowSearch}}>
+        {children}
+      </ProductDetails.Provider>
     </div>
   )
 }
-export default Product
+export default ProductDetailsProvider
 
