@@ -30,6 +30,7 @@ const App = () => {
         <Route path='/ProductDescrip/:category/:id' element={<ProductDescrip/>} />
       </Routes>
       <End/>
+      
     </div>
   )
 }
