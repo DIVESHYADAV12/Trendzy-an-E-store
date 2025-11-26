@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ProductDetails } from "../Context/Product";
 import { ShoppingCart } from "lucide-react";
+import { CartContext } from "../Context/CartContext";
 
 const ProductDescrip = () => {
   const { category,id } = useParams();              // Read ID from the URL
   const { him, her, kid } = useContext(ProductDetails);
+  const {addToCart} = useContext(CartContext)
 
   const productId= Number(id)
 
@@ -55,7 +57,9 @@ const ProductDescrip = () => {
                 />
               </div>
             </div>
-        <button className="mt-20 bg-black text-white px-7 py-4 w-[40vw] rounded text-lg active:scale-95 transition-transform flex justify-center items-center gap-4">
+        <button 
+         onClick={() => addToCart(product)}
+         className="mt-20 bg-black text-white px-7 py-4 w-[40vw] rounded text-lg active:scale-95 transition-transform flex justify-center items-center gap-4">
         <ShoppingCart /> Add to Cart
         </button>
       </div>

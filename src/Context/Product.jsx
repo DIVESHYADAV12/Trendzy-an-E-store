@@ -658,11 +658,9 @@ const ProductDetailsProvider = ({children}) => {
       },])
 
   return (
-    <div>
       <ProductDetails.Provider value={{him, her, kid ,search,setSearch,showSearch,setShowSearch}}>
         {children}
       </ProductDetails.Provider>
-    </div>
   )
 }
 export default ProductDetailsProvider

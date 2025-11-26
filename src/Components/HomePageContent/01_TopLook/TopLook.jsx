@@ -3,13 +3,13 @@ import { Link, Links } from 'react-router-dom'
 
 const TopLook = () => {
   return (
-    <div className='relative'>
+    <div className='relative pt-19'>
       <img
         className='w-screen h-[80vh]'
         src="/src/assets/TopLook.avif" alt="" />
       <div>
         <div className='z-30'>
-        <h3 className='absolute top-5 left-5 flex gap-3 px-15 z-20  '>
+        <h3 className='absolute top-22 left-5 flex gap-3 px-15 z-20  '>
           <Link className='active:scale-95 text-lg hover:underline cursor-pointer' to='/Women'>Women</Link>
           <Link className='active:scale-95 text-lg hover:underline cursor-pointer' to='/Men'>Men</Link>
           <Link className='active:scale-95 text-lg hover:underline cursor-pointer' to='/Kids'>Kids</Link>

@@ -1,10 +1,12 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ProductDetails } from '../../Context/Product'
+import { CartContext } from '../../Context/CartContext'
 
 const Navbar = () => {
   const [visible, setVisible] = useState("false")
   const {setShowSearch} = useContext(ProductDetails)
+  const { cartItems } = useContext(CartContext);
   return (
     <div className='flex bg-white justify-between w-full z-50 px-10 py-5 fixed'>
       <div className='prata-regular flex justify-center items-center text-3xl'>TRENDZY</div>
@@ -35,7 +37,8 @@ const Navbar = () => {
         </div>
         <Link to='/Cart' className='relative'>
           <img className='w-5 cursor-pointer' src="/src/assets/cart_icon.png" alt="" />
-          <p className='absolute right-[-5px] bottom-[-5px] w-4 rounded-full text-center bg-black text-white leading-4 aspect-square text-[8px]'> 10</p>
+          <p
+           className='absolute right-[-5px] bottom-[-5px] w-4 rounded-full text-center bg-black text-white leading-4 aspect-square text-[8px]'>{cartItems.length}</p>
         </Link>
         {/* <img onClick={()=>{setVisible(true)}} src="/src/assets/menu_icon.png" className='w-5 cursor-pointer' alt="" /> */}
       </div>
