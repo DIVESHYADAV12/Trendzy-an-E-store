@@ -26,18 +26,18 @@ const Cart = () => {
                 className="flex items-center gap-6 border-b pb-6 last:border-none"
               >
                 <img
-                  src={item.image}
+                  src={item.Img}
                   alt=""
                   className="w-28 h-28 object-cover rounded-lg shadow-sm"
                 />
 
                 <div className="flex-1">
-                  <h2 className="text-lg font-medium">{item.name}</h2>
-                  <p className="text-gray-600 text-sm mt-1">{item.category}</p>
+                  <h2 className="text-lg font-medium">{item.Name}</h2>
+                  <p className="text-gray-600 text-sm mt-1">{item.Category}</p>
 
                   <div className="flex items-center mt-4 gap-5">
 
-                    <p className="text-lg font-semibold">₹{item.price}</p>
+                    <p className="text-lg font-semibold">₹{item.Price}</p>
 
                     {/* Quantity UI */}
                     <div className="flex items-center border rounded-lg overflow-hidden">
@@ -65,7 +65,7 @@ const Cart = () => {
             <div className="space-y-4 text-gray-700">
               <div className="flex justify-between">
                 <p>Price ({cartItems.length} items)</p>
-                <p>₹{cartItems.reduce((acc, item) => acc + item.price, 0)}</p>
+                <p>₹{cartItems.reduce((acc, item) => acc + item.Price, 0)}</p>
               </div>
 
               <div className="flex justify-between">
@@ -77,11 +77,11 @@ const Cart = () => {
 
               <div className="flex justify-between text-lg font-semibold">
                 <p>Total Amount</p>
-                <p>₹{cartItems.reduce((acc, item) => acc + item.price, 0)}</p>
+                <p>₹{cartItems.reduce((acc, item) => acc + item.Price, 0)}</p>
               </div>
             </div>
 
-            <button className="w-full mt-8 bg-black text-white py-3 rounded-lg hover:bg-gray-900 transition">
+            <button className="w-full mt-8 bg-black text-white py-3 rounded-lg  hover:bg-gray-900 hover:scale-105 transition">
               Proceed to Checkout
             </button>
           </div>
