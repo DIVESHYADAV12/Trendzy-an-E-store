@@ -20,7 +20,7 @@ const Navbar = () => {
         <Link to='/Contact' className=' flex flex-col items-center hover:scale-105 transition-transform'>
           <p className='hover:text-black'>Contact</p>
         </Link>
-        <Link className=' flex flex-col items-center hover:scale-105 transition-transform'>
+        <Link to='/About' className=' flex flex-col items-center hover:scale-105 transition-transform'>
           <p className='hover:text-black'>About</p>
         </Link></div>
       <div className='flex items-center gap-6'>
@@ -30,7 +30,7 @@ const Navbar = () => {
           <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
             <div className='flex flex-col gap-2 text-gray-600 bg-slate-100 w-35 items-center rounded'>
               <p className='cursor-pointer hover:text-black'>My Profile</p>
-              <p className='cursor-pointer hover:text-black'>Orders</p>
+              <Link to='/Cart' className='cursor-pointer hover:text-black'>Orders</Link>
               <p className='cursor-pointer hover:text-black'>Logout</p>
             </div>
           </div>

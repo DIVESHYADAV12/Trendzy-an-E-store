@@ -12,6 +12,7 @@ import Cart from './Pages/Cart'
 import Search from './Components/Navbar/SearchBar/Search'
 import ProductDescrip from './Pages/ProductDescrip'
 import ScrolltoTop from './Components/Scroll/ScrolltoTop'
+import About from './Pages/About'
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path='/Kids' element={<Kids/>}/>
         <Route path='/Contact' element={<Contact/>} />
         <Route path='/Login' element={<Login/>} />
+        <Route path='/About' element={<About/>} />
         <Route path='/Cart' element={<Cart/>} />
         <Route path='/ProductDescrip/:category/:id' element={<ProductDescrip/>} />
       </Routes>
