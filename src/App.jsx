@@ -13,6 +13,7 @@ import Search from './Components/Navbar/SearchBar/Search'
 import ProductDescrip from './Pages/ProductDescrip'
 import ScrolltoTop from './Components/Scroll/ScrolltoTop'
 import About from './Pages/About'
+import Signup from './Pages/Signup'
 
 const App = () => {
   return (
@@ -30,6 +31,8 @@ const App = () => {
         <Route path='/About' element={<About/>} />
         <Route path='/Cart' element={<Cart/>} />
         <Route path='/ProductDescrip/:category/:id' element={<ProductDescrip/>} />
+        <Route path="/signup" element={<Signup />} />
+
       </Routes>
       <End/>
     </div>

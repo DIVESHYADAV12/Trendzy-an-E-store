@@ -31,7 +31,7 @@ const Navbar = () => {
             <div className='flex flex-col gap-2 text-gray-600 bg-slate-100 w-35 items-center rounded'>
               <p className='cursor-pointer hover:text-black'>My Profile</p>
               <Link to='/Cart' className='cursor-pointer hover:text-black'>Orders</Link>
-              <p className='cursor-pointer hover:text-black'>Logout</p>
+              <Link to='/signup' className='cursor-pointer hover:text-black'>Sign up</Link>
             </div>
           </div>
         </div>
